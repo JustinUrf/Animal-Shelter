@@ -23,6 +23,6 @@ namespace AnimalClient.Models
     JArray jsonResponse = JsonConvert.DeserialzedObject<JArray>(result);
     List<Animal> animalList = JsonConvert.DeserializedObject<List<PLanet>>(jsonResponse.ToString());
 
-    return animal;
+    return animalList;
   }
 }
