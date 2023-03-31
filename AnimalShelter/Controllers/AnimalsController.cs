@@ -16,8 +16,37 @@ namespace AnimalShelter.Controllers
     }
 
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<Animal>>> Get()
+    public async Task<ActionResult<IEnumerable<Animal>>> Get(string Breed, string Name, int Age, string Color, string Gender)
     {
+      IQueryable<Animal> query = _db.Animals.AsQueryable();
+
+      if (Breed != null)
+      {
+        query = query.Where(entry => entry.Breed == Breed);
+      }
+
+      if (Name != null)
+      {
+        query = query.Where(entry => entry.Name == Name);
+      }
+
+      if (Age != 0)
+      {
+        query = query.Where(entry => entry.Age == Age);
+      }
+
+      if (Color != null)
+      {
+        query = query.Where(entry => entry.Color == Color);
+      }
+
+      if (Gender != null)
+      {
+        query = query.Where(entry => entry.Gender == Gender);
+      }
+
+
+
       return await _db.Animals.ToListAsync();
     }
 
