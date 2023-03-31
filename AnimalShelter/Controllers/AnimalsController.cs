@@ -45,9 +45,7 @@ namespace AnimalShelter.Controllers
         query = query.Where(entry => entry.Gender == Gender);
       }
 
-
-
-      return await _db.Animals.ToListAsync();
+      return await query.ToListAsync();
     }
 
     [HttpGet("{id}")]
