@@ -13,16 +13,16 @@ namespace AnimalClient.Models
     public string Color { get; set; }
     public string Gender { get; set; }
     public int Age { get; set; }
-  }
 
-  public static List<Animal> GetAnimals()
-  {
-    var apiCallTask = ApiHelper.GetAll();
-    var result = apiCallTask.Result;
+    public static List<Animal> GetAnimals()
+    {
+      var apiCallTask = ApiHelper.GetAll();
+      var result = apiCallTask.Result;
 
-    JArray jsonResponse = JsonConvert.DeserialzedObject<JArray>(result);
-    List<Animal> animalList = JsonConvert.DeserializedObject<List<PLanet>>(jsonResponse.ToString());
+      JArray jsonResponse = JsonConvert.DeserialzedObject<JArray>(result);
+      List<Animal> animalList = JsonConvert.DeserializedObject<List<PLanet>>(jsonResponse.ToString());
 
-    return animalList;
+      return animalList;
+    }
   }
 }
