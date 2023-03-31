@@ -1,6 +1,6 @@
 #nullable enable
 
-namespace PlanetaryClient.Models;
+namespace AnimalClient.Models;
 
 public class ErrorViewModel
 {

@@ -5,7 +5,7 @@ using Newtonsoft.Json.Linq;
 
 namespace AnimalClient.Models
 {
-  public class Animals
+  public class Animal
   {
     public int AnimalId { get; set; }
     public string Name { get; set; }
@@ -19,8 +19,8 @@ namespace AnimalClient.Models
       var apiCallTask = ApiHelper.GetAll();
       var result = apiCallTask.Result;
 
-      JArray jsonResponse = JsonConvert.DeserialzedObject<JArray>(result);
-      List<Animal> animalList = JsonConvert.DeserializedObject<List<PLanet>>(jsonResponse.ToString());
+      JArray jsonResponse = JsonConvert.DeserializeObject<JArray>(result);
+      List<Animal> animalList = JsonConvert.DeserializeObject<List<Animal>>(jsonResponse.ToString());
 
       return animalList;
     }
