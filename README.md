@@ -139,7 +139,7 @@ Notice that the value of `animalId` needs to match the id number in the URL. In 
 
 ## Known Bugs
 
-* No known issues.
+* AnimalClient is still a WIP.
 
 ## License
 Enjoy the API!
