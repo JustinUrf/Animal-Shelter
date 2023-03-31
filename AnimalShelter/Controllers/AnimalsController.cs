@@ -42,7 +42,7 @@ namespace AnimalShelter.Controllers
       return CreatedAtAction(nameof(GetAnimal), new { id = animal.AnimalId }, animal);
     }
 
-    [HttpPut("{id")]
+    [HttpPut("{id}")]
     public async Task<IActionResult> Put(int id, Animal animal)
     {
       if (id != animal.AnimalId)
@@ -85,7 +85,7 @@ namespace AnimalShelter.Controllers
 
         _db.Animals.Remove(animal);
         await _db.SaveChangesAsync();
-        
+
         return NoContent();
       }
     }
